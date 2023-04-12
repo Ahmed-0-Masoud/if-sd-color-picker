@@ -21,6 +21,12 @@ const bgColor = {
 }
 
 const redSlider = document.querySelector("input.red");
+const greenSlider = document.querySelector("input.green");
+const blueSlider = document.querySelector("input.blue");
+
+const rvalue = document.querySelector(".r-value");
+const gvalue = document.querySelector(".g-value");
+const bvalue = document.querySelector(".b-value");
 
 //Event listeners
 redSlider.addEventListener("change", (event) => {
@@ -28,6 +34,22 @@ redSlider.addEventListener("change", (event) => {
     console.log("changing red: " + bgColor.r)
     
     changeCircleColor();
+    rvalue.textContent = bgColor.r
+    
+});
+greenSlider.addEventListener("change", (event) => {
+    bgColor.g = event.target.value;
+    console.log("changing green: " + bgColor.g)
+    
+    changeCircleColor();
+    gvalue.textContent = bgColor.g
+});
+blueSlider.addEventListener("change", (event) => {
+    bgColor.b = event.target.value;
+    console.log("changing blue: " + bgColor.b)
+    
+    changeCircleColor();
+    bvalue.textContent = bgColor.b
 });
 
 
